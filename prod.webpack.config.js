@@ -12,9 +12,9 @@ entries.push(path.resolve(__dirname, 'src/assets/styles/prism-atom-dark.css'));
 
 let cssFileName = 'styles/[name].css';
 
-// if (process.env.NODE_ENV === 'production') {
-//   cssFileName = 'styles/[name].[contenthash].css';
-// }
+if (process.env.NODE_ENV === 'production') {
+  cssFileName = 'styles/[name].[contenthash].css';
+}
 
 module.exports = {
   mode: 'development',
@@ -30,11 +30,11 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: cssFileName,
     }),
-    // new HtmlWebpackPlugin({
-    //   template: path.resolve(__dirname, 'webpack.html'),
-    //   filename: path.resolve(__dirname, 'src/_includes/layouts/webpack.ejs'),
-    //   inject: false,
-    // }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, 'webpack.html'),
+      filename: path.resolve(__dirname, 'src/_includes/layouts/webpack.ejs'),
+      inject: false,
+    }),
   ],
   module: {
     rules: [

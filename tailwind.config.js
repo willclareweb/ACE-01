@@ -1,5 +1,5 @@
 module.exports = {
-  purge: ['./src/**/*.ejs', './src/**/*.md'],
+  content: ['./src/**/*.ejs', './src/**/*.md'],
   theme: {
     fontSize: {
       xs: '0.75rem',
@@ -12,7 +12,7 @@ module.exports = {
       '4xl': '2.25rem',
       '5xl': '3rem',
       '6xl': '4rem',
-    },
+    }, 
     extend: {
       colors: {
         blue: {
